@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f3f5;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 标题／页眉 */
+        .site-header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #dce1e6;
+        }
+
+        .site-header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #1e2a36;
+            margin-bottom: 0.3rem;
+        }
+
+        .site-header .sub {
+            font-size: 0.9rem;
+            color: #5f6c7a;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6eaef;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e2e8f0;
+            color: #1e2a36;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title span {
+            background: #d4dfe8;
+            color: #1e2a36;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.03em;
+        }
+
+        .card p,
+        .card li {
+            font-size: 0.98rem;
+            color: #34495e;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0 0.5rem 1.2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #7a8b9b;
+            font-weight: bold;
+        }
+
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .intro-text {
+            flex: 2;
+            min-width: 240px;
+        }
+
+        .intro-aside {
+            flex: 1;
+            min-width: 160px;
+            background: #f7f9fb;
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e2e7ed;
+        }
+
+        .intro-aside p {
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e9edf2;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            color: #2a3a4a;
+            margin: 0.2rem 0.2rem 0.2rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item h4 {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1f2b36;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin-left: 0.6rem;
+            color: #3f5264;
+            font-size: 0.94rem;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .info-table td {
+            padding: 0.5rem 0.3rem 0.5rem 0;
+            vertical-align: top;
+        }
+
+        .info-table td:first-child {
+            width: 30%;
+            font-weight: 500;
+            color: #2d4053;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: #eef2f6;
+            border: 1px solid #d3dbe3;
+            border-radius: 40px;
+            padding: 0.4rem 1.3rem;
+            font-size: 0.85rem;
+            color: #1f2e3c;
+            text-decoration: none;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .btn-soft:hover {
+            background: #dce4ec;
+            border-color: #b0c0ce;
+        }
+
+        .footer-note {
+            margin-top: 2.6rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #6b7b8a;
+            border-top: 1px solid #dce1e6;
+            padding-top: 1.8rem;
+        }
+
+        .footer-note a {
+            color: #2c3e50;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #bcc9d6;
+        }
+
+        .footer-note a:hover {
+            text-decoration-color: #2c3e50;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .intro-grid {
+                flex-direction: column;
+                gap: 1.4rem;
+            }
+
+            .site-header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <header class="site-header">
+        <h1>九游 · 主题笔记</h1>
+        <div class="sub">围绕关键词展开的轻量知识库 · 目录感入口</div>
+    </header>
+
+    <!-- 介绍区：卡片 + 侧边 -->
+    <div class="card">
+        <div class="card-title">📖 关于九游的叙述</div>
+        <div class="intro-grid">
+            <div class="intro-text">
+                <p>九游这个词在今天的语境里，指向一个与游戏内容、玩家社区和资讯聚合相关的符号。它并不是一个孤立的名字，而更像是一个坐标——串联起测评视角、活动记录和玩家讨论的碎片。</p>
+                <p style="margin-top: 0.8rem;">在更宽泛的脉络里，<a href="https://cctv-jiuyou.com.cn" style="color: #2c3e50; text-decoration: underline; text-underline-offset: 2px; font-weight: 500;">九游</a>往往被理解为某个信息集合的出口。它不制造结论，但提供通往不同线索的路标。这也是为什么很多人把它当作检索的起点，而非终点。</p>
+                <p style="margin-top: 0.8rem;">下面的几个分区试图整理它的几个侧面：用途、常见疑问、关联资料。你可以按需翻阅，也可以把它们当作索引的索引。</p>
+            </div>
+            <div class="intro-aside">
+                <p style="font-weight: 500; font-size: 0.95rem; border-bottom: 1px solid #dde3ea; padding-bottom: 0.4rem;">快速索引</p>
+                <p><span class="tag">游戏资讯</span> <span class="tag">社区观察</span></p>
+                <p><span class="tag">活动记录</span> <span class="tag">版本日志</span></p>
+                <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #4a5b6b;">—— 以上标签仅示意分类方向</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 目录感：三个信息块 -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="card" style="flex: 1; min-width: 220px;">
+            <div class="card-title">📁 说明区</div>
+            <p>九游相关内容通常以资讯聚合、玩家讨论和活动专题三种形态出现。资讯聚合偏重时效性，讨论区则呈现更分散的观点。无论是哪一种，其背后都有一套内容流转的逻辑：编辑筛选、用户反馈、再整理。</p>
+            <p style="margin-top: 1rem;">如果你正在寻找某个特定主题的后续讨论，建议先确认时间线，再判断信息来源。</p>
+        </div>
+        <div class="card" style="flex: 1; min-width: 220px;">
+            <div class="card-title">📌 提示区</div>
+            <ul>
+                <li>不同平台对九游的定义略有差异，注意核对上下文。</li>
+                <li>活动类信息有明确期限，过期的公告可能不再更新。</li>
+                <li>社区用户发言仅代表个人，与站点立场无关。</li>
+                <li>部分链接指向站外内容，可以留意域名和页面协议。</li>
+            </ul>
+        </div>
+        <div class="card" style="flex: 1; min-width: 220px;">
+            <div class="card-title">🔗 相关信息区</div>
+            <table class="info-table">
+                <tr><td>常见别称</td><td>九游、9you、九游社区</td></tr>
+                <tr><td>内容类型</td><td>资讯 · 评测 · 活动 · 讨论</td></tr>
+                <tr><td>更新频率</td><td>日常更新，周末及节假略有变化</td></tr>
+                <tr><td>参考索引</td><td><a href="https://cctv-jiuyou.com.cn" style="color: #2c3e50; text-decoration: underline; text-underline-offset: 2px;">九游</a> 主站</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <div class="card-title">❓ 常见疑问摘要 <span>faq</span></div>
+        <div class="faq-item">
+            <h4>九游这个称谓是怎么来的？</h4>
+            <p>它来自早期玩家社区的习惯用法，后逐渐固定为一个内容集合的称呼。并非正式品牌，而更像一种约定俗成的代号。</p>
+        </div>
+        <div class="faq-item">
+            <h4>这里能直接查到历史活动列表吗？</h4>
+            <p>部分归档在站内索引页，不过更早的记录可能需要通过搜索或存档页面回溯。我们正在逐步整理时间线。</p>
+        </div>
+        <div class="faq-item">
+            <h4>为什么提示区建议核对上下文？</h4>
+            <p>因为同一关键词在不同时期、不同板块下的含义会偏移。比如「九游」有时候指内容源，有时候指讨论版。留意前后文可以减少误解。</p>
+        </div>
+        <div style="margin-top: 1rem; text-align: right;">
+            <a href="https://cctv-jiuyou.com.cn" class="btn-soft">九游</a>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <p>本页是一个以知识库入口为思路的轻量索引，信息截止于近期整理。更多延伸可参考 <a href="https://cctv-jiuyou.com.cn">九游</a> 上的原始内容。</p>
+        <p style="margin-top: 0.4rem; color: #7d8d9c;">© 索引页 · 不构成官方立场</p>
+    </div>
+
+</div>
+</body>
+</html>
