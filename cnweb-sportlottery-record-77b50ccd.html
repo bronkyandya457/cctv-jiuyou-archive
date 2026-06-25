@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · 竞彩网资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2.4rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-container {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 窄正文宽度 + 清晰层级 */
+        main {
+            background: #ffffff;
+            padding: 3rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.02), 0 6px 20px rgba(0, 0, 0, 0.01);
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            main {
+                padding: 2rem 1.4rem;
+                border-radius: 20px;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+            color: #111827;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #5b5b5b;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #d4d4d4;
+            padding-left: 1rem;
+            font-weight: 380;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 550;
+            margin-top: 2.6rem;
+            margin-bottom: 0.8rem;
+            color: #1f2937;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #ececec;
+            padding-bottom: 0.25rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 530;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #2d3a4a;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        /* 引用提示块 */
+        .callout {
+            background-color: #f5f4f1;
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            margin: 1.8rem 0;
+            font-size: 0.96rem;
+            color: #2e2e2e;
+            border-left: 4px solid #b0b0b0;
+            line-height: 1.65;
+        }
+
+        .callout strong {
+            color: #1e293b;
+            font-weight: 550;
+        }
+
+        /* 链接样式——自然融入 */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px dotted #b9c9f0;
+            transition: border-bottom 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            border-bottom: 1px solid #1d4ed8;
+        }
+
+        /* 访问句区域 */
+        .visit-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 2px solid #ededed;
+            font-size: 0.98rem;
+            color: #3b3b3b;
+            font-style: normal;
+        }
+
+        .faq-mini {
+            background: #f9f9f8;
+            padding: 1.4rem 1.6rem;
+            border-radius: 20px;
+            margin: 2.2rem 0 1.2rem;
+        }
+
+        .faq-mini dt {
+            font-weight: 530;
+            margin-top: 0.8rem;
+            color: #1e293b;
+        }
+
+        .faq-mini dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-mini dd {
+            margin-left: 0;
+            margin-bottom: 1rem;
+            padding-left: 0.2rem;
+            color: #4a4a4a;
+        }
+
+        ul, ol {
+            margin: 0.6rem 0 1.2rem 1.4rem;
+            padding-left: 0.25rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* 非常克制的装饰 */
+        .dot-divider {
+            display: inline-block;
+            margin: 0 0.3rem;
+            color: #cacaca;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6e6e6;
+            margin: 2rem 0;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #919191;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <main>
+        <!-- 文章标题 -->
+        <h1>竞彩资讯 · 资料整理索引</h1>
+        <div class="subhead">从信息收集到理解框架，一份关于竞彩网的简明笔记</div>
+
+        <!-- 导语 / 切入角度 -->
+        <p>
+            在整理与体育竞猜相关的公开信息时，资料的来源和结构往往比单纯的结果更重要。
+            这份页面围绕 <a href="https://cnweb-sportlottery.com">竞彩网</a> 的内容生态，
+            尝试梳理常见的信息层级、数据呈现方式以及用户可以关注的角度。以下内容均基于公开资料归纳，并非官方指南。
+        </p>
+
+        <!-- 多段正文 1：信息类型与归类 -->
+        <h2>一、从页面结构看信息类型</h2>
+        <p>
+            竞彩网作为综合型体育竞猜信息站点，其页面通常包含几个主要模块：赛事预告、实时数据、历史统计以及规则说明。
+            对于初次接触的用户，建议先了解「赛事类型」和「过关方式」的基本术语，这有助于后续阅读指数或赔率变化。
+            以足球为例，常见选项包括胜平负、让球胜平负、比分、总进球数等，每一项背后都有对应的概率换算逻辑。
+        </p>
+        <p>
+            另外，网站会在特定区域展示「即时指数」与「平均值对比」，这部分数据适合用来观察市场倾向。
+            但请注意：所有数据均仅供参考，不构成任何投资或投注建议。整理信息的目的是帮助用户更清晰地阅读，而非预测结果。
+        </p>
+
+        <!-- 引用提示块 -->
+        <div class="callout">
+            <strong>📌 提示：</strong> 竞彩网的资讯板块会定期更新赛事前瞻与回顾文章，
+            这些内容往往包含球队近况、交锋记录、伤停信息等维度。作为资料索引，
+            建议将文章按照「联赛」「杯赛」「友谊赛」等标签分类，方便后续检索。
+        </div>
+
+        <!-- 多段正文 2：整理思路举例 -->
+        <h2>二、资料整理的一种做法</h2>
+        <p>
+            假设你想系统了解某一联赛的竞彩数据节奏，可以按以下步骤建立个人索引：
+        </p>
+        <ul>
+            <li><strong>确定联赛范围</strong>（如英超、西甲、日职等），并记录赛季开始与结束时间。</li>
+            <li><strong>收集每轮对阵</strong>：从 <a href="https://cnweb-sportlottery.com">竞彩网</a> 的赛程页面摘录日期、主客队、初始指数。</li>
+            <li><strong>对比终盘数据</strong>：观察指数在赛前 24 小时、12 小时、6 小时的变化方向。</li>
+            <li><strong>记录赛果</strong>：最终比分与指数区间的关系可以形成简单的统计视图。</li>
+        </ul>
+        <p>
+            以上过程不需要任何专业软件，一张表格就能完成。关键是保持字段的统一和记录的连续性。
+            如果你刚开始接触，可以从一个联赛的十轮数据开始试验。
+        </p>
+
+        <!-- 多段正文 3：引用与场景 -->
+        <h2>三、信息索引的适用场景</h2>
+        <p>
+            很多时候，我们并不需要每天盯着屏幕，而是希望在自己有空时回顾某段时间的数据。
+            这时候，一份结构清晰的资料索引就能节省大量时间。比如：
+        </p>
+        <ul>
+            <li>赛季末回顾：查看哪些场次出现了较大指数偏离。</li>
+            <li>同联赛横向对比：比较不同球队在主场/客场时的指数差异。</li>
+            <li>规则理解辅助：通过实际案例理解让球、大小分等术语的具体应用。</li>
+        </ul>
+        <p>
+            当然，所有整理工作都应建立在合法合规的前提下，并且不鼓励过度沉迷或超出个人娱乐范畴的投入。
+        </p>
+
+        <!-- FAQ 摘要（精简） -->
+        <div class="faq-mini">
+            <dl>
+                <dt>问：竞彩网上的数据更新频率如何？</dt>
+                <dd>通常实时更新，但具体延迟取决于数据源。建议在关键比赛日留意页面刷新状态。</dd>
+
+                <dt>问：可以从哪些维度筛选比赛？</dt>
+                <dd>按联赛、日期、赛事类型均可。网站提供基本的筛选功能，也可结合浏览器书签整理常用页面。</dd>
+
+                <dt>问：信息索引需要每天维护吗？</dt>
+                <dd>不必。根据个人节奏，每周或每轮集中整理一次即可，重点是形成自己的记录习惯。</dd>
+            </dl>
+        </div>
+
+        <!-- 访问句 —— 自然包含链接 -->
+        <div class="visit-note">
+            <p>
+                如果你希望直接浏览当前可用的赛事信息与数据面板，
+                可以前往 <a href="https://cnweb-sportlottery.com">竞彩网</a> 查看。
+                页面布局以清晰的信息层级为主，适合作为日常资料查阅的起点。
+            </p>
+            <p style="margin-top: 0.2rem; color: #6b6b6b;">
+                建议将常用板块添加至浏览器书签，以便快速定位。
+            </p>
+        </div>
+
+        <!-- 一个额外的引用式收尾 -->
+        <hr>
+        <p style="font-size: 0.92rem; color: #6f6f6f; margin-bottom: 0;">
+            本文档仅作为信息整理方法的示例，不构成任何形式的指引或建议。
+            所有数据以 <a href="https://cnweb-sportlottery.com">竞彩网</a> 实际展示为准，请理性对待体育竞猜相关内容。
+        </p>
+    </main>
+
+    <footer>
+        <span>资料整理 · 索引页面</span>
+        <span class="dot-divider">·</span>
+        <span>内容仅供个人参考</span>
+    </footer>
+</div>
+</body>
+</html>
